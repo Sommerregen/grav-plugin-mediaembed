@@ -1,0 +1,204 @@
+# Global plugin configurations
+
+enabled: true                # Set to false to disable this plugin completely
+built_in_css: true           # Use built-in CSS of the plugin
+built_in_js: true            # Use built-in JS of the plugin
+
+# Default options for MediaEmbed configuration.
+
+# -- Media --
+media:
+  width: 640                 # Default media width
+  height: 390                # Default media height including controls
+  adjust: true               # Adjust media or keep default dimensions?
+
+  preview: true              # Show or hide media preview
+  responsive: false          # Allow media to be responsive
+  protocol: "http://"        # Default protocol for remote media resources
+
+# -- Services --
+services:
+  ## Audio ##
+  SoundCloud:
+    enabled: true           # Set to false to disable this service completely
+    type: "rich"            # Type of the media service
+
+    example: "https://soundcloud.com/semiseria/verruckert-ausschnitt"
+
+    # URL of media service used for embedding
+    url: "w.soundcloud.com/player/?url=http://api.soundcloud.com/tracks/{:id}"
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://soundcloud.com/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://soundcloud.com/oembed?url={:canonical}&format=json"
+
+    # Schemes to grab media id
+    schemes:
+      - "soundcloud.com/*"
+      - "soundcloud.com/*/*"
+      - "soundcloud.com/*/sets/*"
+      - "soundcloud.com/groups/*"
+      - "snd.sc/*"
+
+    params:
+      auto_play: false
+      buying: true
+      download: true
+      hide_related: false
+      liking: true
+      sharing: true
+      show_artwork: true
+      show_comments: true
+      show_playcount: true
+      show_user: true
+      visual: false
+
+  Spotify:
+    enabled: true           # Set to false to disable this service completely
+    type: "rich"            # Type of the media service
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://open.spotify.com/track/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "https://embed.spotify.com/oembed/?url={:canonical}&format=json"
+
+    # Schemes to grab media id
+    schemes:
+      - "open.spotify.com/track/*"
+      - "spoti.fi/*"
+
+  ## Photo ##
+  Flickr:
+    enabled: true           # Set to false to disable this service completely
+    type: "photo"           # Type of the media service
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://www.flickr.com/photos/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://flickr.com/services/oembed?url={:canonical}&format=json"
+
+    # Schemes to grab media id
+    schemes:
+      - "flickr.com/photos/*"
+      - "flic.kr/*"
+
+  Imgur:
+    enabled: true           # Set to false to disable this service completely
+    type: "rich"           # Type of the media service
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://imgur.com/gallery/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://api.imgur.com/oembed?url={:canonical}&format=json"
+
+    # Schemes to grab media id
+    schemes:
+      - "imgur.com/gallery/*"
+      - "imgur.com/a/*"
+      - "imgur.com/*"
+
+  Instagram:
+    enabled: true           # Set to false to disable this service completely
+    type: "rich"            # Type of the media service
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://instagram.com/p/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://api.instagram.com/oembed?url={:canonical}&format=json"
+
+    # Schemes to grab media id
+    schemes:
+      - "instagr.am/p/*"
+      - "instagram.com/p/*"
+
+  ## Video ##
+  Dailymotion:               # Legacy media service name
+    enabled: true            # Set to false to disable this service completely
+    type: "video"            # Type of the legacy media service
+
+    # URL of media service used for embedding
+    url: "www.dailymotion.com/embed/video/{:id}"
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://dailymotion.com/video/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://www.dailymotion.com/services/oembed?url={:canonical}&format=json"
+
+    schemes:              # Regex filter ("~REGEX~i") to grab media id
+      - "dailymotion.com/video/*"
+      - "dailymotion.com/*/video/*"
+      - "dai\.ly/*"
+
+    # Custom service-related media option overrides
+    params:
+      quality: 1080
+
+  YouTube:
+    enabled: true            # Set to false to disable this service completely
+    type: "video"            # Type of the media service
+
+    # URL of media service used for embedding
+    url: "www.youtube.com/embed/{:id}"
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://www.youtube.com/watch?v={:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://www.youtube.com/oembed?url={:canonical}&format=json"
+
+    # Regex filters ("~REGEX~i") to grab media id
+    schemes:
+      - "youtube.com/watch?*v=*"
+      - "youtube.com/embed/*"
+      - "youtube.com/v/*"
+      - "youtube.com/?*v=*"
+      - "youtu.be/*"
+
+    # Custom service-related media option overrides
+    params:
+      autoplay: 0
+      modestbranding: 1
+      theme: "light"
+
+  Vimeo:                  # Legacy media service name
+    enabled: true         # Set to false to disable this service completely
+    type: "video"         # Type of the legacy media service
+
+    url: "player.vimeo.com/video/{:id}"
+    canonical: "https://vimeo.com/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://vimeo.com/api/oembed.json?url={:canonical}"
+
+    schemes:              # Regex filter ("~REGEX~i") to grab media id
+      - "vimeo.com/*"
+      - "vimeo.com/channels/*/*"
+      - "vimeo.com/groups/*/videos/*"
+
+    # Custom service-related media option overrides
+    params:
+      autoplay: 0
+
+  ## Others ##
+  GitHub:
+    enabled: true           # Set to false to disable this service completely
+    type: "rich"            # Type of the media service
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://www.gist.github.com/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://gist.github.com/{:id}.json"
+
+    # Schemes to grab media id
+    schemes:
+      - "gist.github.com/*"
+      - "gist.github.com/*/*"
+      - "gist.github.com/*?*"

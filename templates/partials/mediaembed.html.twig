@@ -1,0 +1,124 @@
+{# Shortcut variables #}
+{% set default = mediaembed.config.media %}
+{% set oembed = mediaembed.service %}
+
+{# Processing error #}
+{% if not mediaembed.success %}
+  {% if default.responsive %}
+    {% set class = "-responsive mediaembed-msod" %}
+  {% else  %}
+    {% set class = " mediaembed-msod\" style=\"max-width: " ~ default.width ~ "px;" %}
+  {% endif %}
+
+  <div class="mediaembed{{ class }}">
+    <p class="mediaembed-icon">&#9749;</p>
+    <p class="mediaembed-error-title"><b>Unable to process oEmbed media:</b><a href="{{ mediaembed.raw.src }}" alt="{{ mediaembed.raw.alt }}" title="{{ mediaembed.raw.title }}">{{ mediaembed.raw.src|e }}</a></p>
+    <p class="mediaembed-error-message"><b>Error:</b>{{ mediaembed.message }}</p>
+  </div>
+
+{# Setup block #}
+{% else %}
+  {% set response = oembed.attributes %}
+  {# Normalize response #}
+  {% if (response.width is empty) or not (response.width is defined) or (response.width == 0) %}
+    {% set response = response|merge({'width' : default.width}) %}
+  {% endif %}
+
+  {% if (response.height is empty) or not (response.height is defined) or (response.height == 0) %}
+    {% set response = response|merge({'height' : default.height}) %}
+  {% endif %}
+
+  {% set width = response.width %}
+  {% set height = response.height %}
+  {% set ratio = height / width %}
+
+  {# Adjust OEmbed media dimensions or restrict them? #}
+  {% if default.adjust %}
+    {# Check if computed height is larger than default setting #}
+    {% if (width * ratio) > default.height or (height / ratio) > default.width %}
+      {# Rescale width and height #}
+      {% set width = default.width %}
+      {% set height = (default.width * ratio)|round %}
+    {% endif %}
+  {% else %}
+    {% set width = default.width %}
+    {% set height = default.height %}
+  {% endif %}
+
+  {# Recompute aspect ratio #}
+  {% set ratio = height / width %}
+  {% set container_styles = "padding-bottom: " ~ "%.2f"|format(ratio * 100) ~ "%;" %}
+
+  {# Embed responsive OEmbed media #}
+  {% if default.responsive %}
+    {% set responsive = "-responsive" %}
+
+    {% set width = 1920 %}
+    {% set height = (width * ratio)|round %}
+  {% else  %}
+    {% set styles = " style=\"max-width: " ~ width ~ "px; max-height: " ~ height ~ "px;\"" %}
+  {% endif %}
+
+  {# Setup lazy loading media for those with preview enabled #}
+  {% if default.preview %}
+    {% set lazyload = " lazyload" %}
+    {% set lazyload_script = " onclick=\"lazyload(this)\"" %}
+  {% endif %}
+
+  <div class="mediaembed{{ responsive }} mediaembed-media mediaembed-{{ oembed.type }} mediaembed-{{ oembed.name|lower }}{{ lazyload }}"{{ styles }}>
+    <div class="mediaembed-container" style="{{ container_styles }}">
+    {# Embed content according to media type #}
+
+    {# -- Photo -- #}
+    {% if oembed.type == "photo" %}
+      {% set title = oembed.getOembed().provider_name ~ ': &#8220;' ~ oembed.title ~ '&#8221; by ' ~ oembed.author %}
+      <a class="mediaembed-embed" href="{{ oembed.author('url') }}" title="{{ title }}">
+        <img src="{{ oembed.url }}" alt="{{ oembed.title }}">
+      </a>
+
+    {# -- Video -- #}
+    {% elseif oembed.type == "video" %}
+      <a href="{{ oembed.getEmbedCode }}" alt="{{ mediaembed.raw.alt }}" title="{{ mediaembed.raw.title }}" class="mediaembed-media"{{ lazyload_script }}>
+        {# JavaScript lazy-loading #}
+        <!--
+        <iframe class="mediaembed-embed" src="{{ oembed.getEmbedCode }}" width="{{ width }}" height="{{ height }}" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+          <p>Your browser does not support iframes.</p>
+        </iframe>
+        -->
+
+        {# Show Thumbnail #}
+        {% if default.preview and oembed.thumbnail %}
+          <img src="{{ oembed.thumbnail }}" alt="{{ mediaembed.raw.alt }}" title="{{ mediaembed.raw.title }}" class="mediaembed-thumbnail" />
+        {% else %}
+          {# Show placeholder #}
+        {% endif %}
+
+        {# Toggle for loading iframe content #}
+        <input type="checkbox" id="mediaembed-hidden-input-{{  mediaembed.uid }}" class="mediaembed-input" />
+
+        {# Implement JavaScript-less lazyload technique #}
+        <noscript>
+          <iframe class="mediaembed-embed" src="{{ oembed.getEmbedCode }}" width="{{ width }}" height="{{ height }}" frameborder="0" scrolling="no" webkitallowfullscreen mozallowfullscreen allowfullscreen style="display: none;">
+            <p>Your browser does not support iframes.</p>
+          </iframe>
+        </noscript>
+
+        <label class="mediaembed-play" for="mediaembed-hidden-input-{{  mediaembed.uid }}">&#9654;</label>
+      </a>
+
+    {# -- Link -- #}
+    {% elseif oembed.type == "link" %}
+      {% set title = oembed.getOembed().provider_name ~ ': &#8220;' ~ oembed.mediaembed.raw.title|default(title) ~ '&#8221; by ' ~ oembed.author %}
+      <a href="{{ mediaembed.raw.src }}" alt="{{ mediaembed.raw.alt }}" title="{{ title }}">{{ mediaembed.raw.src|e }}</a>
+    {# -- Rich media -- #}
+    {% elseif oembed.type == "rich" %}
+      <div class="mediaembed-media">{{ oembed.getEmbedCode() }}</div>
+
+    {# -- Nothing from above -- #}
+    {% else %}
+      {# Show at least a link for the user #}
+      <a href="{{ mediaembed.raw.src }}" alt="{{ mediaembed.raw.alt }}" title="{{ mediaembed.raw.title }}">{{ mediaembed.raw.src|e }}</a>
+    {% endif %}
+    </div>
+  </div>
+{% endif %}
