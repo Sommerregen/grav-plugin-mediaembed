@@ -1,6 +1,6 @@
 <?php
 /**
- * MediaEmbed v1.0.0
+ * MediaEmbed v1.0.1
  *
  * This plugin embeds several media sites (e.g. YouTube, Vimeo,
  * Soundcloud) by only providing the URL to the medium.
@@ -8,7 +8,7 @@
  * Licensed under MIT, see LICENSE.
  *
  * @package     MediaEmbed
- * @version     1.0.0
+ * @version     1.0.1
  * @link        <https://github.com/sommerregen/grav-plugin-archive-plus>
  * @author      Benjamin Regler <sommerregen@benjamin-regler.de>
  * @copyright   2015, Benjamin Regler
