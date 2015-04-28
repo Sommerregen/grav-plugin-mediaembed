@@ -4,7 +4,7 @@
 
 ## About
 
-Grav MediaEmbed plugin is the official successor of [Grav VideoEmbed plugin](https://github.com/sommerregen/grav-plugin-mediaembed/), allows to embed several media sites by only providing the URL to the medium and supports lazy loading techniques for videos and other media. Currently it supports
+Grav MediaEmbed plugin is the official successor of [Grav VideoEmbed plugin](https://github.com/sommerregen/grav-plugin-videoembed/), allows to embed several media sites by only providing the URL to the medium and supports lazy loading techniques for videos and other media. Currently it supports
 
 - YouTube
 - Vimeo
