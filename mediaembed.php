@@ -136,10 +136,6 @@ class MediaEmbedPlugin extends Plugin
 
     $config = $this->mergeConfig($page);
     if ($config->get('enabled') && $this->compileOnce($page)) {
-      if ( $page->slug() !== 'mediaembed' ) {
-        return;
-      }
-
       // Get content
       $content = $page->getRawContent();
 
