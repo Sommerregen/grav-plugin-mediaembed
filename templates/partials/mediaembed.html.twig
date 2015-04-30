@@ -28,8 +28,8 @@
     {% set response = response|merge({'height' : default.height}) %}
   {% endif %}
 
-  {% set width = response.width %}
-  {% set height = response.height %}
+  {% set width = response.width|default(1) %}
+  {% set height = response.height|default(1) %}
   {% set ratio = height / width %}
 
   {# Adjust OEmbed media dimensions or restrict them? #}
