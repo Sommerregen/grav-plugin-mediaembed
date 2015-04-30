@@ -21,15 +21,15 @@
   {% set response = oembed.attributes %}
   {# Normalize response #}
   {% if (response.width is empty) or not (response.width is defined) or (response.width == 0) %}
-    {% set response = response|merge({'width' : default.width}) %}
+    {% set response = response|merge({'width' : default.width|default(1)}) %}
   {% endif %}
 
   {% if (response.height is empty) or not (response.height is defined) or (response.height == 0) %}
-    {% set response = response|merge({'height' : default.height}) %}
+    {% set response = response|merge({'height' : default.height|default(1)}) %}
   {% endif %}
 
-  {% set width = response.width|default(1) %}
-  {% set height = response.height|default(1) %}
+  {% set width = response.width %}
+  {% set height = response.height %}
   {% set ratio = height / width %}
 
   {# Adjust OEmbed media dimensions or restrict them? #}
@@ -37,12 +37,12 @@
     {# Check if computed height is larger than default setting #}
     {% if (width * ratio) > default.height or (height / ratio) > default.width %}
       {# Rescale width and height #}
-      {% set width = default.width %}
+      {% set width = default.width|default(1) %}
       {% set height = (default.width * ratio)|round %}
     {% endif %}
   {% else %}
-    {% set width = default.width %}
-    {% set height = default.height %}
+    {% set width = default.width|default(1) %}
+    {% set height = default.height|default(1) %}
   {% endif %}
 
   {# Recompute aspect ratio #}
