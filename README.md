@@ -24,6 +24,19 @@ but more services are coming soon! In principle it supports any service, which p
 
 ![Screenshot MediaEmbed Plugin](assets/screenshot.png "MediaEmbed Preview")
 
+### The Roadmap
+
+Grav MediaEmbed plugin is neat and a powerful tool to embed other media types. However at the moment only a few services are supported. Further the configuration for the services may differ under certain circumstances; some may be more configurable than others. In future releases I intend to implement:
+
+ - [ ] a unified interface for accessing [OEmbed](http://oembed.com "An overview about OEmbed services") services
+ - [ ] a cache mechanism for requests, data and images
+ - [ ] support more than 200+ OEmbed services
+ - [ ] and a more powerful API
+
+If you have any ideas to extend the list, then please don't hesitate to open an issue and spread your idea with the community!
+
+So far I'm happy that Grav MediaEmbed plugin becomes one of the most popular a d used plugins in a few days. Thank you! I try to give my best to provide you a fast, easy to use and extensible plugin. I have already spent a lot of time and will spend a lot of time even more. The plan is to extend Grav MediaEmbed plugin even more to embed arbitrary websites and embed media as cards (e.g. Wordpress, Twitter, Facebook, GitHub). This will however mean a many hour work and thus I plan to support such features in a paid version of Grav MediaEmbed plugin called "MediaEmbed Pro", which will coming soon. From then on, Grav MediaEmbed plugin will come in two flavors: a free version supporting all OEmbed services and a paid version with better embedding support of media and enabling the use of embed media cards.
+
 ## Installation and Updates
 
 Installing or updating the `MediaEmbed` plugin can be done in one of two ways. Using the GPM (Grav Package Manager) installation method (i.e. `bin/gpm install mediaembed`) or manual install or update method by downloading [this plugin](https://github.com/sommerregen/grav-plugin-mediaembed) and extracting all plugin files to
