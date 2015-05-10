@@ -94,7 +94,7 @@ class MediaEmbedPlugin extends Plugin
         'onPageContentRaw' => ['onPageContentRaw', 0],
         'onPageContentProcessed' => ['onPageContentProcessed', 0],
         'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
-        'onTwigPageVariables' => ['onTwigPageVariables', 0],
+        'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
       ]);
     }
   }
@@ -161,7 +161,7 @@ class MediaEmbedPlugin extends Plugin
   /**
    * Set needed variables to display videos.
    */
-  public function onTwigPageVariables()
+  public function onTwigSiteVariables()
   {
     // Register built-in CSS assets
     if ($this->config->get('plugins.mediaembed.built_in_css')) {

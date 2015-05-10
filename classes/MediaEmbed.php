@@ -77,6 +77,7 @@ class MediaEmbed
     // Initialize Service class
     $this->service = new Service();
     $this->config = $config;
+    $this->hashes = [];
 
     $services = $this->config->get('plugins.mediaembed.services', []);
     foreach ($services as $name => $config) {
@@ -89,7 +90,7 @@ class MediaEmbed
       if (!class_exists($class)) {
         // Fallback to a more generic one
         $type = isset($config['type']) ? $config['type'] : '';
-        $class = __NAMESPACE__ . "\\OEmbed\\OEmbed$type";
+        $class = __NAMESPACE__."\\OEmbed\\OEmbed".ucfirst($type);
       }
 
       // Populate config
@@ -113,7 +114,8 @@ class MediaEmbed
    *
    * @return string      the identifier
    */
-  public function id($var = null) {
+  public function id($var = null)
+  {
     if ($var !== null) {
       $this->id = $var;
     }
@@ -231,9 +233,24 @@ class MediaEmbed
           $template = 'partials/mediaembed' . TEMPLATE_EXT;
           $embed = $twig->processTemplate($template, $vars);
         } else {
+          $text = (strlen($data['alt']) > 0) ? $data['alt'] : $data['src'];
+          $attributes = [
+            'href' => $data['src'],
+            'title' => $data['title'],
+          ];
+          foreach ($attributes as $key => $value) {
+            if (strlen($value) == 0) {
+              unset($attributes[$key]);
+            } else {
+              $value = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+              $attributes[$key] = $key . '="' . $value . '"';
+            }
+          }
+
+          $attributes = $attributes ? ' ' . implode(' ', $attributes) : '';
+
           // Transform embed media to link for compatibility
-          $embed = sprintf('<a href="%s" alt="%s" title="%s">%1$s</a>',
-            $data['src'], $data['alt'], $data['title']);
+          $embed = sprintf('<a%s>%s</a>', $attributes, $text);
         }
 
         return $embed;
@@ -284,7 +301,7 @@ class MediaEmbed
   {
     // Append or reset assets
     if (!$append) {
-      $this->assets = array();
+      $this->assets = [];
     }
 
     // Wrap non-array assets in an array
@@ -407,8 +424,9 @@ class MediaEmbed
   /**
    * Reset MathJax class
    */
-  protected function reset() {
-    $this->hashes = array();
+  protected function reset()
+  {
+    $this->hashes = [];
   }
 
   /**
@@ -425,7 +443,8 @@ class MediaEmbed
    * @return string       Return a unique text-token which will be
    *                      reverted back when calling unhash.
    */
-  protected function hash($text, $data = []) {
+  protected function hash($text, $data = [])
+  {
     static $counter = 0;
 
     // Swap back any tag hash found in $text so we do not have to `unhash`
@@ -447,7 +466,8 @@ class MediaEmbed
    *
    * @return string       A text containing no hash inside
    */
-  protected function unhash($text) {
+  protected function unhash($text)
+  {
     $text = preg_replace_callback(
       '~mediaembed::([0-9a-z]+)::([0-9]+)::M~i', function($atches) {
       return $this->hashes[$matches[0]][0];
