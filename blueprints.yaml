@@ -1,5 +1,5 @@
 name: MediaEmbed
-version: 1.0.1
+version: 1.0.2
 description: "This plugin embeds several media sites (e.g. YouTube, Vimeo, Soundcloud) by only providing the URL to the medium."
 icon: spinner
 author:
