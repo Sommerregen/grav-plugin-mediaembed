@@ -1,6 +1,6 @@
 <?php
 /**
- * MediaEmbed v1.0.1
+ * MediaEmbed v1.0.2
  *
  * This plugin embeds several media sites (e.g. YouTube, Vimeo,
  * Soundcloud) by only providing the URL to the medium.
@@ -8,7 +8,7 @@
  * Licensed under MIT, see LICENSE.
  *
  * @package     MediaEmbed
- * @version     1.0.1
+ * @version     1.0.2
  * @link        <https://github.com/sommerregen/grav-plugin-archive-plus>
  * @author      Benjamin Regler <sommerregen@benjamin-regler.de>
  * @copyright   2015, Benjamin Regler
@@ -94,7 +94,7 @@ class MediaEmbedPlugin extends Plugin
         'onPageContentRaw' => ['onPageContentRaw', 0],
         'onPageContentProcessed' => ['onPageContentProcessed', 0],
         'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
-        'onTwigPageVariables' => ['onTwigPageVariables', 0],
+        'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
       ]);
     }
   }
@@ -161,7 +161,7 @@ class MediaEmbedPlugin extends Plugin
   /**
    * Set needed variables to display videos.
    */
-  public function onTwigPageVariables()
+  public function onTwigSiteVariables()
   {
     // Register built-in CSS assets
     if ($this->config->get('plugins.mediaembed.built_in_css')) {
