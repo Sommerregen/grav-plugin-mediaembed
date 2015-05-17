@@ -412,7 +412,9 @@ class OEmbed implements OEmbedInterface
   {
     $mediaembed = $event['mediaembed'];
     foreach ($this->config->get('assets', []) as $asset) {
-      $mediaembed->add($asset);
+      if (is_string($asset) && strlen($asset) > 0) {
+        $mediaembed->add($asset);
+      }
     }
   }
 
