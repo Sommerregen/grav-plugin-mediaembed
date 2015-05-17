@@ -1,3 +1,11 @@
+# v1.1.0
+## 05/17/2015
+
+1. [](#new)
+	* Added support for **Slides.com SlideDesk** as requested in issue [#4](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/4)
+2. [](#improved)
+	* Assets checks (in rare cases it was possible that MediaEmbed throws an error)
+
 # v1.0.2
 ## 05/10/2015
 
@@ -13,7 +21,7 @@
 ## 04/28/2015
 
 3. [](#bugfix)
-	* Fixed issue #1 with broken MediaEmbed functionality (i.e. removed test code)
+	* Fixed issue [#1](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/1) with broken MediaEmbed functionality (i.e. removed test code)
 
 # v1.0.0
 ## 04/26/2015
