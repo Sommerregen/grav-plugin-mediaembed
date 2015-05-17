@@ -202,3 +202,24 @@ services:
       - "gist.github.com/*"
       - "gist.github.com/*/*"
       - "gist.github.com/*?*"
+
+  Slides:
+    enabled: true           # Set to false to disable this service completely
+    type: "rich"            # Type of the media service
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "http://slides.com/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "http://slides.com/{:id}"
+
+    # Schemes to grab media id
+    schemes:
+      - "slides.com/*"
+      - "slid.es/*"
+
+    # Custom service-related media option overrides
+    params:
+      style: "light"        # Footer style: dark, light, hidden
+      width: 1920
+      height: 1400
