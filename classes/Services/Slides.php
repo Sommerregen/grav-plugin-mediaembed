@@ -2,10 +2,10 @@
 /**
  * Slides.com
  *
- * Present your ideas - Slides is a place for creating, presenting and
- * sharing presentations.
+ * This file is part of Grav MediaEmbed plugin.
  *
- * Licensed under MIT, see LICENSE.
+ * Dual licensed under the MIT or GPL Version 3 licenses, see LICENSE.
+ * http://benjamin-regler.de/license/
  */
 
 namespace Grav\Plugin\MediaEmbed\Services;

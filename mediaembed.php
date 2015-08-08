@@ -5,14 +5,16 @@
  * This plugin embeds several media sites (e.g. YouTube, Vimeo,
  * Soundcloud) by only providing the URL to the medium.
  *
- * Licensed under MIT, see LICENSE.
+ * Dual licensed under the MIT or GPL Version 3 licenses, see LICENSE.
+ * http://benjamin-regler.de/license/
  *
  * @package     MediaEmbed
  * @version     1.1.0
  * @link        <https://github.com/sommerregen/grav-plugin-archive-plus>
  * @author      Benjamin Regler <sommerregen@benjamin-regler.de>
  * @copyright   2015, Benjamin Regler
- * @license     <http://opensource.org/licenses/MIT>            MIT
+ * @license     <http://opensource.org/licenses/MIT>        MIT
+ * @license     <http://opensource.org/licenses/GPL-3.0>    GPLv3
  */
 
 namespace Grav\Plugin;
