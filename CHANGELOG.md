@@ -1,10 +1,18 @@
+# v1.2.0
+## 08/08/2015
+
+1. [](#new)
+  * Added admin configurations **(requires Grav 0.9.34+)**
+2. [](#improved)
+  * Updated `README.md`
+
 # v1.1.0
 ## 05/17/2015
 
 1. [](#new)
-	* Added support for **Slides.com SlideDesk** as requested in issue [#4](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/4)
+  * Added support for **Slides.com SlideDesk** as requested in issue [#4](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/4)
 2. [](#improved)
-	* Assets checks (in rare cases it was possible that MediaEmbed throws an error)
+  * Assets checks (in rare cases it was possible that MediaEmbed throws an error)
 
 # v1.0.2
 ## 05/10/2015

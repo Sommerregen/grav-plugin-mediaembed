@@ -2,10 +2,10 @@
 /**
  * MediaEmbed
  *
- * Helper class to embed several media sites (e.g. YouTube, Vimeo,
- * Soundcloud) by only providing the URL to the medium.
+ * This file is part of Grav MediaEmbed plugin.
  *
- * Licensed under MIT, see LICENSE.
+ * Dual licensed under the MIT or GPL Version 3 licenses, see LICENSE.
+ * http://benjamin-regler.de/license/
  */
 
 namespace Grav\Plugin\MediaEmbed;

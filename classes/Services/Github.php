@@ -2,7 +2,10 @@
 /**
  * GitHub
  *
- * Licensed under MIT, see LICENSE.
+ * This file is part of Grav MediaEmbed plugin.
+ *
+ * Dual licensed under the MIT or GPL Version 3 licenses, see LICENSE.
+ * http://benjamin-regler.de/license/
  */
 
 namespace Grav\Plugin\MediaEmbed\Services;

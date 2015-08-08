@@ -1,6 +1,16 @@
-# [Grav MediaEmbed Plugin][project]
+# [![Grav MediaEmbed Plugin](assets/logo.png)][project]
+
+[![Release](https://img.shields.io/github/release/sommerregen/grav-plugin-mediaembed.svg)][project] [![Issues](https://img.shields.io/github/issues/sommerregen/grav-plugin-mediaembed.svg)][issues] [![Dual license](https://img.shields.io/badge/dual%20license-MIT%2FGPL-blue.svg)](LICENSE "License") <span style="float:right;">[![Flattr](https://api.flattr.com/button/flattr-badge-large.png)][flattr] [![PayPal](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)][paypal]</span>
 
 > This plugin embeds several media sites (e.g. YouTube, Vimeo, Soundcloud) by only providing the URL to the medium.
+
+##### Table of Contents:
+
+* [About](#about)
+* [Installation and Updates](#installation-and-updates)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Licencse](#license)
 
 ## About
 
@@ -39,9 +49,9 @@ So far I'm happy that Grav MediaEmbed plugin becomes one of the most popular a d
 
 ## Installation and Updates
 
-Installing or updating the `MediaEmbed` plugin can be done in one of two ways. Using the GPM (Grav Package Manager) installation method (i.e. `bin/gpm install mediaembed`) or manual install or update method by downloading [this plugin](https://github.com/sommerregen/grav-plugin-mediaembed) and extracting all plugin files to
+Installing or updating the `MediaEmbed` plugin can be done in one of two ways. Using the GPM (Grav Package Manager) installation update method (i.e. `bin/gpm install mediaembed`) or manual install by downloading [this plugin](https://github.com/sommerregen/grav-plugin-mediaembed) and extracting all plugin files to
 
-	/your/site/grav/user/plugins/mediaembed
+    user/plugins/mediaembed
 
 For more informations, please check the [Installation and update guide](docs/INSTALL.md).
 
@@ -51,7 +61,7 @@ The `MediaEmbed` plugin comes with some sensible default configuration, that are
 
 ### Config Defaults
 
-```
+```yaml
 # Global plugin configurations
 
 enabled: true                # Set to false to disable this plugin completely
@@ -101,13 +111,13 @@ You can contribute at any time! Before opening any issue, please search for exis
 
 After that please note:
 
-* If you find a bug or would like to make a feature request or suggest an improvement, [please open a new issue][issues]. If you have any interesting ideas for additions to the syntax please do suggest them as well!
+* If you find a bug, would like to make a feature request or suggest an improvement, [please open a new issue][issues]. If you have any interesting ideas for additions to the syntax please do suggest them as well!
 * Feature requests are more likely to get attention if you include a clearly described use case.
 * If you wish to submit a pull request, please make again sure that your request match the [guidelines for contributing](docs/CONTRIBUTING.md) and that you keep track of adding unit tests for any new or changed functionality.
 
 ### Support and donations
 
-If you like my project, feel free to support me via [![Flattr](https://api.flattr.com/button/flattr-badge-large.png)][flattr] or by sending me some bitcoins to **1HQdy5aBzNKNvqspiLvcmzigCq7doGfLM4**.
+If you like my project, feel free to support me via [![Flattr](https://api.flattr.com/button/flattr-badge-large.png)][flattr] or by sending me some bitcoins to [**1HQdy5aBzNKNvqspiLvcmzigCq7doGfLM4**][bitcoin].
 
 Thanks!
 
@@ -115,12 +125,18 @@ Thanks!
 
 Copyright (c) 2015 [Benjamin Regler][github]. See also the list of [contributors] who participated in this project.
 
-[Licensed](LICENSE) for use under the terms of the [MIT license][mit-license].
+[Dual-licensed](LICENSE) for use under the terms of the [MIT][mit-license] or [GPLv3][gpl-license] licenses.
+
+![GNU license - Some rights reserved][gnu]
 
 [github]: https://github.com/sommerregen/ "GitHub account from Benjamin Regler"
+[gpl-license]: http://opensource.org/licenses/GPL-3.0 "GPLv3 license"
 [mit-license]: http://www.opensource.org/licenses/mit-license.php "MIT license"
 
 [flattr]: https://flattr.com/submit/auto?user_id=Sommerregen&url=https://github.com/sommerregen/grav-plugin-mediaembed "Flatter my GitHub project"
+[paypal]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SYFNP82USG3RN "Donate for my GitHub project using PayPal"
+[bitcoin]: bitcoin:1HQdy5aBzNKNvqspiLvcmzigCq7doGfLM4?label=GitHub%20project "Donate for my GitHub project using BitCoin"
+[gnu]: https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/License_icon-gpl-88x31.svg/88px-License_icon-gpl-88x31.svg.png "GNU license - Some rights reserved"
 
 [project]: https://github.com/sommerregen/grav-plugin-mediaembed
 [issues]: https://github.com/sommerregen/grav-plugin-mediaembed/issues "GitHub Issues for Grav MediaEmbed Plugin"
