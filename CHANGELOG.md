@@ -1,3 +1,11 @@
+# v1.2.0
+## 08/08/2015
+
+1. [](#new)
+  * Added admin configurations **(requires Grav 0.9.34+)**
+2. [](#improved)
+  * Updated `README.md`
+
 # v1.1.0
 ## 05/17/2015
 
