@@ -47,7 +47,11 @@
 
   {# Recompute aspect ratio #}
   {% set ratio = height / width %}
-  {% set container_styles = "padding-bottom: " ~ "%.2f"|format(ratio * 100) ~ "%;" %}
+  {% if oembed.type == "rich" and oembed.name == "Twitter" %}
+    {% set container_styles = "padding-bottom: " ~ "%.2f"|format(ratio * 55) ~ "%;" %}
+  {% else %}
+    {% set container_styles = "padding-bottom: " ~ "%.2f"|format(ratio * 100) ~ "%;" %}
+  {% endif %}  
 
   {# Embed responsive OEmbed media #}
   {% if default.responsive %}

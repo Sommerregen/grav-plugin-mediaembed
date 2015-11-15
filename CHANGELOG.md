@@ -1,3 +1,11 @@
+# v1.2.1
+## 15/11/2015
+
+1. [](#new)
+  * Added support for **Twitter.com**
+2. [](#bugfix)
+  * Fixed support for **Github**
+
 # v1.2.0
 ## 08/08/2015
 

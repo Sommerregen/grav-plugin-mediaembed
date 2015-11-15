@@ -187,15 +187,15 @@ services:
       autoplay: 0
 
   ## Others ##
-  GitHub:
+  Github:
     enabled: true           # Set to false to disable this service completely
     type: "rich"            # Type of the media service
 
     # Canonical URL of media service (used in endpoint calls)
-    canonical: "http://www.gist.github.com/{:id}"
+    canonical: "https://gist.github.com/{:id}"
 
     # Endpoint to grab media informations
-    endpoint: "http://gist.github.com/{:id}.json"
+    endpoint: "https://gist.github.com/{:id}.json"
 
     # Schemes to grab media id
     schemes:
@@ -223,3 +223,18 @@ services:
       style: "light"        # Footer style: dark, light, hidden
       width: 1920
       height: 1400
+
+  Twitter:
+    enabled: true           # Set to false to disable this service completely
+    type: "rich"            # Type of the media service
+
+    # Canonical URL of media service (used in endpoint calls)
+    canonical: "https://twitter.com/{:id}"
+
+    # Endpoint to grab media informations
+    endpoint: "https://api.twitter.com/1/statuses/oembed.json?url={:canonical}"
+
+    # Schemes to grab media id
+    schemes:
+      - "twitter.com/*"
+      - "twitter.com/*/*"
