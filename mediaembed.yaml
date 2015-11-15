@@ -1,6 +1,7 @@
 # Global plugin configurations
 
 enabled: true                # Set to false to disable this plugin completely
+link: false                  # Set if display link or img, if false display img tag for not mediaembed 
 built_in_css: true           # Use built-in CSS of the plugin
 built_in_js: true            # Use built-in JS of the plugin
 

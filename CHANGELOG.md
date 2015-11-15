@@ -1,3 +1,11 @@
+# v1.2.2
+## 15/11/2015
+
+1. [](#new)
+  * Added support image or link for not embed media  
+2. [](#bugfix)
+  * Fixed partial bug #9
+
 # v1.2.1
 ## 15/11/2015
 
