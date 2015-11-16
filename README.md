@@ -25,6 +25,7 @@ Grav MediaEmbed plugin is the official successor of [Grav VideoEmbed plugin](htt
 - Imgur
 - Instagram
 - GitHub
+- Twitter
 
 but more services are coming soon! In principle it supports any service, which provides the [oEmbed format](http://www.oembed.com/). Media are embedded using the Markdown syntax for images (`![Alt](URL "Title")`), e.g. the below screenshot was created with the following code:
 

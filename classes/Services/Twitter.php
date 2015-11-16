@@ -1,6 +1,6 @@
 <?php
 /**
- * GitHub
+ * Twitter
  *
  * This file is part of Grav MediaEmbed plugin.
  *
@@ -10,13 +10,12 @@
 
 namespace Grav\Plugin\MediaEmbed\Services;
 
-use Grav\Common\Debugger;
 use Grav\Plugin\MediaEmbed\OEmbed\OEmbedRich;
 
 /**
- * GitHub
+ * Twitter
  */
-class GitHub extends OEmbedRich
+class Twitter extends OEmbedRich
 {
 
 	public function getOEmbed()
@@ -26,7 +25,6 @@ class GitHub extends OEmbedRich
     }
 
     $endpoint = $this->format($this->config->get('endpoint', ''));
-
     if (!$endpoint) {
       return [];
     }
@@ -40,17 +38,14 @@ class GitHub extends OEmbedRich
 
     $this->oembed = [
     	'type' => 'rich',
-    	'title' => $json['files'],
-    	'description' => $json['description'],
-			'author_name' => $json['owner'],
-			'author_url' => 'https://github.com/' . $json['owner'],
-			'provider' => 'GitHub',
-			'provider_url' => 'https://gist.github.com/',
-			'url' => 'https://gist.github.com/' . $this->embedCode,
-			'html' => $json['div'],
+			'author_name' => $json['author_name'],
+			'author_url' => 'https://twitter.com/' . $json['author_name'],
+			'provider_name' => 'Twitter',
+			'provider_url' => 'https://twitter.com/',
+			'url' => 'https://www.twitter.com/' . $this->embedCode,
+			'html' => $json['html'],
 		];
 
-		$this->config->join('assets', [$json['stylesheet']]);
     return $this->oembed;
   }
 }

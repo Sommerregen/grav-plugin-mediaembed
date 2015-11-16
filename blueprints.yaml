@@ -1,5 +1,5 @@
 name: MediaEmbed
-version: 1.2.0
+version: 1.2.2
 description: "This plugin embeds several media sites (e.g. YouTube, Vimeo, Soundcloud) by only providing the URL to the medium."
 icon: spinner
 author:
@@ -224,6 +224,16 @@ form:
             services.Slides:
               type: toggle
               label: "Embed Slides"
+              default: 1
+              options:
+                1: "Yes"
+                0: "No"
+              validate:
+                type: bool
+
+            services.Twitter:
+              type: toggle
+              label: "Embed Twitter"
               default: 1
               options:
                 1: "Yes"
