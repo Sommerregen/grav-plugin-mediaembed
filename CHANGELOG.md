@@ -18,18 +18,18 @@
 ## 05/10/2015
 
 1. [](#new)
-	* Added plugin roadmap
-	* Added support for modular pages
+  * Added plugin roadmap
+  * Added support for modular pages
 2. [](#improved)
-	* Prevent potential division by zero error [#2](https://github.com/Sommerregen/grav-plugin-mediaembed/pull/2)
+  * Prevent potential division by zero error [#2](https://github.com/Sommerregen/grav-plugin-mediaembed/pull/2)
 3. [](#bugfix)
-	* Fixed link generation in case no MediaEmbed service is found
+  * Fixed link generation in case no MediaEmbed service is found
 
 # v1.0.1
 ## 04/28/2015
 
 3. [](#bugfix)
-	* Fixed issue [#1](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/1) with broken MediaEmbed functionality (i.e. removed test code)
+  * Fixed issue [#1](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/1) with broken MediaEmbed functionality (i.e. removed test code)
 
 # v1.0.0
 ## 04/26/2015
