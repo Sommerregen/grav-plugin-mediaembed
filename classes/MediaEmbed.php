@@ -234,10 +234,28 @@ class MediaEmbed
           $embed = $twig->processTemplate($template, $vars);
         } else {
           $text = (strlen($data['alt']) > 0) ? $data['alt'] : $data['src'];
-          $attributes = [
-            'href' => $data['src'],
-            'title' => $data['title'],
-          ];
+
+          // If display link or img
+          $link = $config->get('link');
+          if($link == true) {
+            $attributes = [
+              'href' => $data['src'],
+              'title' => $data['title'],
+            ];
+
+            $format = '<a%s>%s</a>';
+
+          } else {
+            $attributes = [
+              'src' => $data['src'],
+              'title' => $data['title'],
+              'alt' => $data['alt'],
+            ];
+
+            $format = '<img%s>';
+
+          }
+
           foreach ($attributes as $key => $value) {
             if (strlen($value) == 0) {
               unset($attributes[$key]);
@@ -249,8 +267,9 @@ class MediaEmbed
 
           $attributes = $attributes ? ' ' . implode(' ', $attributes) : '';
 
-          // Transform embed media to link for compatibility
-          $embed = sprintf('<a%s>%s</a>', $attributes, $text);
+          // Transform embed media to link or img for compatibility
+          $embed = sprintf($format, $attributes, $text);
+
         }
 
         return $embed;

@@ -1,5 +1,5 @@
 name: MediaEmbed
-version: 1.2.0
+version: 1.3.0
 description: "This plugin embeds several media sites (e.g. YouTube, Vimeo, Soundcloud) by only providing the URL to the medium."
 icon: spinner
 author:
@@ -106,7 +106,7 @@ form:
               validate:
                 type: bool
 
-            media.preview:
+            media.responsive:
               type: toggle
               label: "Responsive media"
               help: "Allow media to be responsive"
@@ -130,7 +130,7 @@ form:
           title: "Services"
 
           fields:
-            services.SoundCloud:
+            services.SoundCloud.enabled:
               type: toggle
               label: "Embed SoundCloud"
               default: 1
@@ -140,7 +140,7 @@ form:
               validate:
                 type: bool
 
-            services.Spotify:
+            services.Spotify.enabled:
               type: toggle
               label: "Embed Spotify"
               default: 1
@@ -150,7 +150,7 @@ form:
               validate:
                 type: bool
 
-            services.Flickr:
+            services.Flickr.enabled:
               type: toggle
               label: "Embed Flickr"
               default: 1
@@ -160,7 +160,7 @@ form:
               validate:
                 type: bool
 
-            services.Imgur:
+            services.Imgur.enabled:
               type: toggle
               label: "Embed Imgur"
               default: 1
@@ -171,7 +171,7 @@ form:
                 type: bool
 
 
-            services.Instagram:
+            services.Instagram.enabled:
               type: toggle
               label: "Embed Instagram"
               default: 1
@@ -181,7 +181,7 @@ form:
               validate:
                 type: bool
 
-            services.Dailymotion:
+            services.Dailymotion.enabled:
               type: toggle
               label: "Embed Dailymotion"
               default: 1
@@ -191,7 +191,7 @@ form:
               validate:
                 type: bool
 
-            services.YouTube:
+            services.YouTube.enabled:
               type: toggle
               label: "Embed YouTube"
               default: 1
@@ -201,7 +201,7 @@ form:
               validate:
                 type: bool
 
-            services.Vimeo:
+            services.Vimeo.enabled:
               type: toggle
               label: "Embed Vimeo"
               default: 1
@@ -211,7 +211,7 @@ form:
               validate:
                 type: bool
 
-            services.GitHub:
+            services.GitHub.enabled:
               type: toggle
               label: "Embed GitHub"
               default: 1
@@ -221,9 +221,19 @@ form:
               validate:
                 type: bool
 
-            services.Slides:
+            services.Slides.enabled:
               type: toggle
               label: "Embed Slides"
+              default: 1
+              options:
+                1: "Yes"
+                0: "No"
+              validate:
+                type: bool
+
+            services.Twitter.enabled:
+              type: toggle
+              label: "Embed Twitter"
               default: 1
               options:
                 1: "Yes"
