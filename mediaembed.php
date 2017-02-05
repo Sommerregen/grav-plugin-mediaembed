@@ -1,6 +1,6 @@
 <?php
 /**
- * MediaEmbed v1.2.0
+ * MediaEmbed v1.3.0
  *
  * This plugin embeds several media sites (e.g. YouTube, Vimeo,
  * Soundcloud) by only providing the URL to the medium.
@@ -9,7 +9,7 @@
  * http://benjamin-regler.de/license/
  *
  * @package     MediaEmbed
- * @version     1.2.0
+ * @version     1.3.0
  * @link        <https://github.com/sommerregen/grav-plugin-archive-plus>
  * @author      Benjamin Regler <sommerregen@benjamin-regler.de>
  * @copyright   2017, Benjamin Regler

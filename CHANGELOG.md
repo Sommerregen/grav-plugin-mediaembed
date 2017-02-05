@@ -1,18 +1,14 @@
-# v1.2.2
-## 15/11/2015
+# v1.3.0
+## 02/05/2017
 
 1. [](#new)
-  * Added support image or link for not embed media  
+  * Added support image or link for not embed media (Thanks to [@magikcypres](https://github.com/magikcypress))
+  * Added support for **Twitter.com** (Thanks to [@magikcypres](https://github.com/magikcypress))
 2. [](#bugfix)
-  * Fixed partial bug #9
-
-# v1.2.1
-## 15/11/2015
-
-1. [](#new)
-  * Added support for **Twitter.com**
-2. [](#bugfix)
-  * Fixed support for **Github**
+  * Fixed support for **Github** (Thanks to [@magikcypres](https://github.com/magikcypress))
+  * Fixed partial bug [#9](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/9) (Mediaembed converts images into images)
+  * Fixed [#15](https://github.com/Sommerregen/grav-plugin-mediaembed/pull/15) (Fixed `media.responsive`)
+  * Fixed [#25](https://github.com/Sommerregen/grav-plugin-mediaembed/pull/25) (Fix Admin Panel issues [#13](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/13), [#17](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/17), and [#24](https://github.com/Sommerregen/grav-plugin-mediaembed/issues/24))
 
 # v1.2.0
 ## 08/08/2015
