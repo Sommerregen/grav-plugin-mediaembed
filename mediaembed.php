@@ -12,7 +12,7 @@
  * @version     1.2.0
  * @link        <https://github.com/sommerregen/grav-plugin-archive-plus>
  * @author      Benjamin Regler <sommerregen@benjamin-regler.de>
- * @copyright   2015, Benjamin Regler
+ * @copyright   2017, Benjamin Regler
  * @license     <http://opensource.org/licenses/MIT>        MIT
  * @license     <http://opensource.org/licenses/GPL-3.0>    GPLv3
  */

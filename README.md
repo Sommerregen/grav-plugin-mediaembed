@@ -124,7 +124,7 @@ Thanks!
 
 ## License
 
-Copyright (c) 2015 [Benjamin Regler][github]. See also the list of [contributors] who participated in this project.
+Copyright (c) 2017 [Benjamin Regler][github]. See also the list of [contributors] who participated in this project.
 
 [Dual-licensed](LICENSE) for use under the terms of the [MIT][mit-license] or [GPLv3][gpl-license] licenses.
 
