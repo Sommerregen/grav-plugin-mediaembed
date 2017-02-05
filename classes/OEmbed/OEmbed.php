@@ -290,7 +290,7 @@ class OEmbed implements OEmbedInterface
   {
     $thumbnail = '';
     if ($this->oembed) {
-      $thumbnail = $this->oembed->get('thumbnail_url', '');
+      $thumbnail = 'http://img.youtube.com/vi/'.$this->id().'/maxresdefault.jpg';
     }
     return $thumbnail;
   }
