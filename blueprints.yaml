@@ -106,7 +106,7 @@ form:
               validate:
                 type: bool
 
-            media.preview:
+            media.responsive:
               type: toggle
               label: "Responsive media"
               help: "Allow media to be responsive"
