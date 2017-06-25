@@ -10,7 +10,13 @@
 * [Installation and Updates](#installation-and-updates)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [Licencse](#license)
+* [License](#license)
+
+## Project Information:
+
+**This plugin is outdated. It does not work with Grav v1.x.x+ and cannot be administrated via Admin plugin without any problems. If you like this project, any help, pull request, or ideas are much appreciated.**
+
+**Status:** Seeking co-maintainer(s), Maintenance fixes only
 
 ## About
 
@@ -124,7 +130,7 @@ Thanks!
 
 ## License
 
-Copyright (c) 2017 [Benjamin Regler][github]. See also the list of [contributors] who participated in this project.
+Copyright (c) 2015-2017 [Benjamin Regler][github]. See also the list of [contributors] who participated in this project.
 
 [Dual-licensed](LICENSE) for use under the terms of the [MIT][mit-license] or [GPLv3][gpl-license] licenses.
 
